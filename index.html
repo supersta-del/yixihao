@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .resume-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .resume-header {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .resume-header h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .resume-header i {
+            margin-right: 10px;
+        }
+
+        /* 主体内容区域 - 使用flex布局 */
+        .resume-content {
+            display: flex;
+        }
+
+        /* 左侧照片区域 */
+        .left-column {
+            width: 180px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 照片样式 */
+        .photo-frame {
+            width: 150px;
+            height: 180px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右侧信息区域 */
+        .right-column {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background-color: #ddd;
+        }
+
+        /* 信息项样式 */
+        .info-item {
+            background-color: white;
+            padding: 12px 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background-color: #f0f8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 标签样式 */
+        .stuff {
+            background-color: #e9e9e9;
+            font-weight: bold;
+            justify-content: center;
+        }
+
+        .stuff i {
+            margin-right: 8px;
+            color: #4a6fa5;
+        }
+
+        /* 大项样式 */
+        .large-item {
+            grid-column: span 3;
+            padding: 15px;
+        }
+
+        /* 中等项样式 */
+        .medium-item {
+            grid-column: span 2;
+        }
+
+        /* 部分标题样式 */
+        .section-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #4a6fa5;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .resume-content {
+                flex-direction: column;
+            }
+            
+            .left-column {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                padding: 15px 0;
+            }
+            
+            .photo-frame {
+                margin: 0 15px 0 0;
+                width: 120px;
+                height: 150px;
+            }
+            
+            .right-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-item, .medium-item, .large-item {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1><i class="fa-solid fa-user"></i> 个人简历</h1>
+        </div>
+        
+        <div class="resume-content">
+            <!-- 左侧照片区域 -->
+            <div class="left-column">
+                <div class="photo-frame">
+                    <img src="yxh.jpg" alt="个人照片" class="photo">
+                </div>
+                <div class="info-item stuff" style="width:100%;">
+                    <i class="fa-solid fa-signature"></i> 姓名
+                </div>
+                <div class="info-item" style="width:100%; text-align:center;">
+                    尹玺皓
+                </div>
+            </div>
+            
+            <!-- 右侧信息区域 -->
+            <div class="right-column">
+                <!-- 第一行信息 -->
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-venus-mars"></i> 性别
+                </div>
+                <div class="info-item">
+                    男
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-cake-candles"></i> 年龄
+                </div>
+                <div class="info-item">
+                    20
+                </div>
+                
+                <!-- 第二行信息 -->
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-location-dot"></i> 籍贯
+                </div>
+                <div class="info-item">
+                    山东省日照市
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-phone"></i> 联系电话
+                </div>
+                <div class="info-item">
+                    19153555992
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-envelope"></i> 电子邮箱
+                </div>
+                <div class="info-item">
+                    无
+                </div>
+                
+                <!-- 第三行信息 -->
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-graduation-cap"></i> 学历
+                </div>
+                <div class="info-item">
+                    大学
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-heart-pulse"></i> 健康状况
+                </div>
+                <div class="info-item">
+                    健康
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-ring"></i> 婚姻状况
+                </div>
+                <div class="info-item">
+                    无
+                </div>
+                
+                <!-- 第四行信息 -->
+                <div class="info-item stuff medium-item">
+                    <i class="fa-solid fa-briefcase"></i> 求职意向
+                </div>
+                <div class="info-item medium-item">
+                    软件编程，web页面编写
+                </div>
+                <div class="info-item stuff">
+                    专业
+                </div>
+                <div class="info-item">
+                    软件工程
+                </div>
+                <div class="info-item stuff">
+                    <i class="fa-solid fa-school"></i> 毕业院校
+                </div>
+                <div class="info-item">
+                    烟台理工学院
+                </div>
+                
+                <!-- 技能证书部分 -->
+                <div class="info-item stuff large-item">
+                    <div class="section-title">
+                        <i class="fa-solid fa-certificate"></i> 技能证书
+                    </div>
+                    <div>软件高级工程师证书，烟台市优秀志愿者证书</div>
+                </div>
+                
+                <!-- 爱好特长部分 -->
+                <div class="info-item stuff large-item">
+                    <div class="section-title">
+                        <i class="fa-solid fa-heart"></i> 个人爱好和特长
+                    </div>
+                    <div>平时喜欢打篮球，羽毛球，乒乓球。空隙时间爱看些小说，因为出生在海边喜欢冲浪和比较刺激的运动</div>
+                </div>
+                
+                <!-- 项目经历部分 -->
+                <div class="info-item stuff large-item">
+                    <div class="section-title">
+                        <i class="fa-solid fa-code"></i> 项目经历
+                    </div>
+                    <div></div>
+                </div>
+                
+                <!-- 自我评价部分 -->
+                <div class="info-item stuff large-item">
+                    <div class="section-title">
+                        <i class="fa-solid fa-star"></i> 自我评价
+                    </div>
+                    <div>
+                        作为一名软件工程专业学生，我始终保持着积极进取的学习态度。
+                        在项目实践上，能够冷静分析，积极寻找解决方案，不仅能锻炼我专业技能，还培养了我解决问题的能力。
+                        生活中我活泼开朗，可以让我在学习与工作之余有这良好的心态，希望能在今后的生活更加优秀。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
